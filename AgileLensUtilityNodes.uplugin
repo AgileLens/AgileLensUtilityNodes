@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Agile Lens Utility Nodes",
+	"Description": "Utilitiy blueprint nodes provided by Agule Lens",
+	"Category": "Other",
+	"CreatedBy": "Agile Lens",
+	"CreatedByURL": "https://agilelens.com/",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "AgileLensUtilityNodes",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen"
+		}
+	]
+}
