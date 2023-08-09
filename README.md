@@ -22,7 +22,7 @@
    
 ## Nodes
 
-### Set Quality Settings -
+#### Set Quality Settings -
   Sets the various console variables listed as the input fields based on the values the user inputs.  Hover over input pins for value ranges.
   
 ![image](https://github.com/AgileLens/AgileLensUtilityNodes/assets/72276215/3561ebe3-ec63-4bb9-af8e-28cbd804fea1)
