@@ -1,4 +1,4 @@
-# AgileLensUtilityNodes
+# Agile Lens Utility Nodes Plugin
 Custom blueprint nodes plugin made by Agile Lens
 
 ![image](https://github.com/AgileLens/AgileLensUtilityNodes/assets/72276215/289903be-b362-40d4-90f6-fe0c327d1406)
