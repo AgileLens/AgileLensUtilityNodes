@@ -1,6 +1,6 @@
 # Agile Lens Utility Nodes Plugin
 
-## Setup
+## Setup:
 ![image](https://github.com/AgileLens/AgileLensUtilityNodes/assets/72276215/289903be-b362-40d4-90f6-fe0c327d1406)
 1. Download the repo source code folder (see above)
 2. Extract the folder to your projects /Plugins directory
@@ -15,6 +15,11 @@
 5. Push: ```git push```
 6. Run : ```git submodule update --remote --merge```
 
+### Update submodule:
+1. Navigate to projects folder
+2. Run update command: ```git submodule update --remote --merge```
+
+   
 ## Nodes
 
 ### Set Quality Settings -
