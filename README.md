@@ -19,7 +19,8 @@
 1. Navigate to projects folder
 2. Run update command: ```git submodule update --remote --merge```
 
-   
+___
+
 ## Nodes
 
 #### Set Quality Settings -
@@ -27,6 +28,7 @@
   
 ![image](https://github.com/AgileLens/AgileLensUtilityNodes/assets/72276215/3561ebe3-ec63-4bb9-af8e-28cbd804fea1)
 
+---
 ### Debug Subsystem and Debug Print String
 #### Debug Subsystem - 
   A simple subsystem that runs and contains a bool "bDebuggingIsEnabled".
