@@ -1,2 +1,2 @@
 # AgileLensUtilityNodes
-Custom blueprint nodes made by Agile Lens
+Custom blueprint nodes plugin made by Agile Lens
