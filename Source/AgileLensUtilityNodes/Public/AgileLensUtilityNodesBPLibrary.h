@@ -27,6 +27,6 @@ class UAgileLensUtilityNodesBPLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "AgileLensUtilityNodes sample test testing"), Category = "AgileLensUtilityNodesTesting")
-	static float AgileLensUtilityNodesSampleFunction(float Param);
+	//UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "AgileLensUtilityNodes sample test testing"), Category = "AgileLensUtilityNodesTesting")
+	//static float AgileLensUtilityNodesSampleFunction(float Param);
 };

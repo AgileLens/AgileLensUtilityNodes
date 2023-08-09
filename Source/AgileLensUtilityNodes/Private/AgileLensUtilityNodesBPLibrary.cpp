@@ -9,8 +9,8 @@ UAgileLensUtilityNodesBPLibrary::UAgileLensUtilityNodesBPLibrary(const FObjectIn
 
 }
 
-float UAgileLensUtilityNodesBPLibrary::AgileLensUtilityNodesSampleFunction(float Param)
-{
-	return -1;
-}
+// float UAgileLensUtilityNodesBPLibrary::AgileLensUtilityNodesSampleFunction(float Param)
+// {
+// 	return -1;
+// }
 
