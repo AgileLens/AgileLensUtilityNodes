@@ -11,4 +11,4 @@ Add as a submodule to existing project:
 1. Navigate to proejcts /Plugins folder
 2. Run: ```git submodule add https://github.com/AgileLens/AgileLensUtilityNodes.git```
 3. Commit and push
-4. Run : ```git submodule add https://github.com/AgileLens/AgileLensUtilityNodes.git```
+4. Run : ```git submodule update --remote --merge```
