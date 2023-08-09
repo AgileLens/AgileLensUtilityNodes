@@ -10,7 +10,7 @@
 4. Launch project
 
 ### Add as a submodule to existing project:
-1. Navigate to proejcts /Plugins folder
+1. Navigate to proejct /Plugins folder
 2. Add the submodule: ```git submodule add https://github.com/AgileLens/AgileLensUtilityNodes.git```
 3. Navigate back to root project directory: ```cd ..```
 4. Commit: ```git commit -am "added Agile Lens Utility Nodes submodule"```
@@ -38,3 +38,10 @@ ___
   Identical to the normal Print String node, but looks to the Debug Subsystem to see if it should fire.
   
 ![image](https://github.com/AgileLens/AgileLensUtilityNodes/assets/72276215/0e36c39a-b67e-4b00-a957-e63ae24a705c)
+
+___
+
+## RefreshSourceCode.bat
+Batch file that will delete the Binaries/Intermediate/Saved folders, regenerate the project solution, and then build the project.
+1. Place the .bat file in the root of your project folder (where the .uproject is located)
+2. Run .bat file
