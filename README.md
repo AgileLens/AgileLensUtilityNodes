@@ -6,3 +6,9 @@ Custom blueprint nodes made by Agile Lens
 2. Extract the folder to your projects /Plugins directory
 3. Rename the folder and remove "-main", the folders full name should be "AgileLensUtilityNodes"
 4. Launch project
+
+Add as a submodule to existing project:
+1. Navigate to proejcts /Plugins folder
+2. Run: ```git submodule add https://github.com/AgileLens/AgileLensUtilityNodes.git```
+3. Commit and push
+4. Run : ```git submodule add https://github.com/AgileLens/AgileLensUtilityNodes.git```
