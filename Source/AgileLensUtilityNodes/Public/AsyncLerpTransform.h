@@ -1,31 +1,29 @@
-﻿// AsyncLerpTransform.h
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "GameFramework/Actor.h"
+#include "Kismet/BlueprintAsyncActionBase.h"
 #include "AsyncLerpTransform.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTransformLerpProgress, FTransform, CurrentValue);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTransformLerpFinished, FTransform, FinalValue);
 
-UCLASS(BlueprintType)
-class AGILELENSUTILITYNODES_API UAsyncLerpTransform : public UObject
+UCLASS()
+class AGILELENSUTILITYNODES_API UAsyncLerpTransform : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
 
 public:
 
-	UAsyncLerpTransform();
-
-	UFUNCTION(BlueprintCallable, Category = "Agile Lens", meta = (WorldContext = "WorldContextObject"))
-	static UAsyncLerpTransform* LerpTransform(UObject* WorldContextObject, FTransform StartValue, FTransform EndValue, float Duration);
+	UFUNCTION(BlueprintCallable, Category = "Async", meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
+	static UAsyncLerpTransform* LerpTransform(UObject* WorldContextObject, FTransform StartValue, FTransform EndValue, float Duration, FTransform& CurrentTransform);
 
 	UPROPERTY(BlueprintAssignable)
-	FOnTransformLerpFinished OnLerpFinished;
+	FOnTransformLerpProgress OnProgress;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnTransformLerpFinished OnCompleted;
 
 private:
-
-	UFUNCTION()
 	void HandleLerpTick();
 
 	FTransform StartValue;

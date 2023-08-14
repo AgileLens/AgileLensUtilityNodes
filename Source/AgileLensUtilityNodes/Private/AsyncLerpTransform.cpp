@@ -1,18 +1,15 @@
-﻿// AsyncLerpTransform.cpp
-#include "AsyncLerpTransform.h"
+﻿#include "AsyncLerpTransform.h"
 
-UAsyncLerpTransform::UAsyncLerpTransform()
-{
-	ElapsedTime = 0.0f;
-}
-
-UAsyncLerpTransform* UAsyncLerpTransform::LerpTransform(UObject* WorldContextObject, FTransform StartValue, FTransform EndValue, float Duration)
+UAsyncLerpTransform* UAsyncLerpTransform::LerpTransform(UObject* WorldContextObject, FTransform StartValue, FTransform EndValue, float Duration, FTransform& CurrentTransform)
 {
 	UAsyncLerpTransform* LerpTask = NewObject<UAsyncLerpTransform>();
 	LerpTask->StartValue = StartValue;
 	LerpTask->EndValue = EndValue;
 	LerpTask->Duration = Duration;
 	LerpTask->TargetWorld = WorldContextObject->GetWorld();
+
+	// Setting the initial value of CurrentTransform
+	CurrentTransform = StartValue;
 
 	LerpTask->TargetWorld->GetTimerManager().SetTimer(LerpTask->LerpTimerHandle, LerpTask, &UAsyncLerpTransform::HandleLerpTick, 0.01667f, true);
 
@@ -30,13 +27,12 @@ void UAsyncLerpTransform::HandleLerpTick()
 	
 	FTransform CurrentTransform(LerpedRotation, LerpedLocation, LerpedScale);
 
-	// Check if we've finished
+	// Here we broadcast the progress
+	OnProgress.Broadcast(CurrentTransform);
+
 	if (ElapsedTime >= Duration)
 	{
 		TargetWorld->GetTimerManager().ClearTimer(LerpTimerHandle);
-		OnLerpFinished.Broadcast(EndValue);
-		return;
+		OnCompleted.Broadcast(EndValue);
 	}
-
-	OnLerpFinished.Broadcast(CurrentTransform);
 }
