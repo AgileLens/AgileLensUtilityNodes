@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "HAL/IConsoleManager.h"
 #include "DebugSubsystem.generated.h"
 
 /**
@@ -17,12 +18,24 @@ class AGILELENSUTILITYNODES_API UDebugSubsystem : public UGameInstanceSubsystem
 public:
 	virtual bool ShouldCreateSubsystem(UObject* Outer) const { return true; }
 	
-	virtual void Initialize(FSubsystemCollectionBase& Collection) {}
+	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	
 	virtual void Deinitialize() {}
-
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (Category = "Agile Lens"))
 	bool bDebuggingIsEnabled = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (Category = "Agile Lens"))
+	TArray<FString> EnabledArray;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (Category = "Agile Lens"))
+	TArray<FString> StartedArray;
+
+	UFUNCTION(Exec)
+	void DebugEnableGroup(FString GroupName);
+	
+	UFUNCTION(Exec)
+	void DebugDisableGroup(FString GroupName);
 
 private:
 	friend class FSubsystemCollectionBase;

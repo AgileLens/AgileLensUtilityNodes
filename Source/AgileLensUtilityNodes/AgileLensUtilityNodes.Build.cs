@@ -26,6 +26,7 @@ public class AgileLensUtilityNodes : ModuleRules
 			new string[]
 			{
 				"Core",
+				"Sockets"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

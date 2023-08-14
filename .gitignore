@@ -1,6 +1,9 @@
 # Visual Studio 2015 user specific files
 .vs/
 
+*.idea/*
+Source/AgileLensUtilityNodes/Private/.idea/
+
 # Compiled Object files
 *.slo
 *.lo

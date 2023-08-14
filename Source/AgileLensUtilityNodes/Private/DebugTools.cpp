@@ -3,27 +3,60 @@
 
 #include "DebugTools.h"
 
-void UDebugTools::DebugPrintString(FString InputString, bool PrintToScreen, bool PrintToLog, FLinearColor TextColor,
-	float Duration)
+void UDebugTools::DebugPrintString(FString InputString, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor,
+	float Duration, FString DebugGroup, bool bStartEnabled)
 {
 	if (!InputString.IsEmpty())
 	{
-		UWorld* W = GEngine->GameViewport->GetWorld();
+		UWorld* TheWorld = GEngine->GameViewport->GetWorld();
 			
-		if ( IsValid(W) )
+		if ( IsValid(TheWorld) )
 		{
-			UGameInstance* GameInstance = W->GetGameInstance();
-			if (GameInstance)
+			if (UGameInstance* GameInstance = TheWorld->GetGameInstance())
 			{
-				if (GameInstance->GetSubsystem<UDebugSubsystem>()->bDebuggingIsEnabled)
+				if (UDebugSubsystem* DebugSubsystem = GameInstance->GetSubsystem<UDebugSubsystem>())
 				{
-					if (PrintToLog)
-						UE_LOG(LogTemp, Warning, TEXT("%s"), *InputString);
+					if (DebugSubsystem->bDebuggingIsEnabled)
+					{
+						if (bStartEnabled)
+						{
+							if (DebugSubsystem->StartedArray.Contains(DebugGroup))
+							{
+								if (DebugSubsystem->EnabledArray.Contains(DebugGroup))
+								{
+									if (bPrintToLog)
+										UE_LOG(LogTemp, Warning, TEXT("%s"), *InputString);
+								
+									if(bPrintToScreen)
+										GEngine->AddOnScreenDebugMessage(-1, Duration, TextColor.ToFColor(true), (TEXT("%s"), *InputString), true);
+								}		
+							}
+							else
+							{
+								DebugSubsystem->EnabledArray.AddUnique(DebugGroup);
+								DebugSubsystem->StartedArray.AddUnique(DebugGroup);
+							
+								if (bPrintToLog)
+									UE_LOG(LogTemp, Warning, TEXT("%s"), *InputString);
+								
+								if(bPrintToScreen)
+									GEngine->AddOnScreenDebugMessage(-1, Duration, TextColor.ToFColor(true), (TEXT("%s"), *InputString), true);
+							}
+						}
+						else
+						{
+							if (DebugSubsystem->EnabledArray.Contains(DebugGroup))
+							{
+								if (bPrintToLog)
+									UE_LOG(LogTemp, Warning, TEXT("%s"), *InputString);
+								
+								if(bPrintToScreen)
+									GEngine->AddOnScreenDebugMessage(-1, Duration, TextColor.ToFColor(true), (TEXT("%s"), *InputString), true);
+							}							
+						}
+					}
 					
-					if(PrintToScreen)
-						GEngine->AddOnScreenDebugMessage(-1, Duration, TextColor.ToFColor(true), (TEXT("%s"), *InputString), true);
 				}
-				
 			}
 		}
 	}

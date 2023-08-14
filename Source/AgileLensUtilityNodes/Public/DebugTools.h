@@ -17,9 +17,11 @@ class AGILELENSUTILITYNODES_API UDebugTools : public UBlueprintFunctionLibrary
 
 	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens"))
 	static void DebugPrintString(FString InputString,
-		bool PrintToScreen = true,
-		bool PrintToLog = true,
+		bool bPrintToScreen = true,
+		bool bPrintToLog = true,
 		FLinearColor TextColor = FLinearColor::Red,
-		float Duration = 2
+		float Duration = 2,
+		FString DebugGroup = FString(TEXT("")),
+		bool bStartEnabled = false
 		);
 };
