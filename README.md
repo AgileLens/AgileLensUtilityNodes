@@ -24,26 +24,3 @@
 2. Run update command: ```git submodule update --remote --merge```
 
 ___
-
-## Nodes
-
-#### Set Quality Settings -
-  Sets the various console variables listed as the input fields based on the values the user inputs.  Hover over input pins for value ranges.
-  
-![image](https://github.com/AgileLens/AgileLensUtilityNodes/assets/72276215/3561ebe3-ec63-4bb9-af8e-28cbd804fea1)
-
----
-### Debug Subsystem and Debug Print String
-#### Debug Subsystem - 
-  A simple subsystem that runs and contains a bool "bDebuggingIsEnabled".
-#### Debug Print String -
-  Identical to the normal Print String node, but looks to the Debug Subsystem to see if it should fire.
-  
-![image](https://github.com/AgileLens/AgileLensUtilityNodes/assets/72276215/0e36c39a-b67e-4b00-a957-e63ae24a705c)
-
-___
-
-## RefreshSourceCode.bat
-Batch file that will delete the Binaries/Intermediate/Saved folders, regenerate the project solution, and then build the project.
-1. Place the .bat file in the root of your project folder (where the .uproject is located)
-2. Run .bat file
