@@ -1,5 +1,7 @@
 # Agile Lens Utility Nodes Plugin
 
+## NOTE: "main" is the 5.X branch, "4_27" is for 4.X.
+
 ## Setup:
 
 ### Manual install
