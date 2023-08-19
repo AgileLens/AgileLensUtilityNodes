@@ -2,11 +2,11 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "ALUN",
-	"Description": "Utility BLueprint Nodes",
+	"FriendlyName": "Agile Lens Utility Nodes",
+	"Description": "Utility blueprint nodes created by Agile Lens",
 	"Category": "Other",
 	"CreatedBy": "Agile Lens",
-	"CreatedByURL": "",
+	"CreatedByURL": "https://www.agilelens.com",
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
@@ -27,5 +27,4 @@
 			"Enabled": true
 		}
 	]
-		
 }
