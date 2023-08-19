@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class AgileLensUtilityNodes : ModuleRules
+public class ALUN : ModuleRules
 {
-	public AgileLensUtilityNodes(ReadOnlyTargetRules Target) : base(Target)
+	public ALUN(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
@@ -26,7 +26,10 @@ public class AgileLensUtilityNodes : ModuleRules
 			new string[]
 			{
 				"Core",
-				"Sockets"
+				"Sockets",
+				"Json",
+				"JsonUtilities",
+				"OSC"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

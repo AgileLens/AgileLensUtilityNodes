@@ -8,13 +8,13 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTransformLerpProgress, FTransform
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTransformLerpFinished, FTransform, FinalValue);
 
 UCLASS()
-class AGILELENSUTILITYNODES_API UAsyncLerpTransform : public UBlueprintAsyncActionBase
+class ALUN_API UAsyncLerpTransform : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
 
 public:
 
-	UFUNCTION(BlueprintCallable, Category = "Async", meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category = "Agile Lens|Async", meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
 	static UAsyncLerpTransform* LerpTransform(UObject* WorldContextObject, FTransform StartValue, FTransform EndValue, float Duration, FTransform& CurrentTransform);
 
 	UPROPERTY(BlueprintAssignable)

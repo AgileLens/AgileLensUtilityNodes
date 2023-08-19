@@ -11,7 +11,7 @@
  * 
  */
 UCLASS()
-class AGILELENSUTILITYNODES_API UQualitySettings : public UBlueprintFunctionLibrary
+class ALUN_API UQualitySettings : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 	
@@ -31,7 +31,7 @@ class AGILELENSUTILITYNODES_API UQualitySettings : public UBlueprintFunctionLibr
 	* @param	f10	Value range: 10 - 200 (Value divided by 100 for a float range of 0.1 - 2.0)
 	* @param	f11	Value range: 10 - 200
 	*/
-	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens"))
+	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens|Settings"))
 	static void SetQualitySettings(
 		UPARAM(DisplayName = "Player Controller") APlayerController *PC,
 		UPARAM(DisplayName = "Anti Aliasing Quality") int f1 = 0,
