@@ -8,7 +8,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTransformLerpProgress, FTransform
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTransformLerpFinished, FTransform, FinalValue);
 
 UCLASS()
-class AGILELENSUTILITYNODES_API UAsyncLerpTransform : public UBlueprintAsyncActionBase
+class ALUN_API UAsyncLerpTransform : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
 

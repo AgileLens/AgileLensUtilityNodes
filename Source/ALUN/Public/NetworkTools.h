@@ -12,7 +12,7 @@
  * 
  */
 UCLASS()
-class AGILELENSUTILITYNODES_API UNetworkTools : public UBlueprintFunctionLibrary
+class ALUN_API UNetworkTools : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 

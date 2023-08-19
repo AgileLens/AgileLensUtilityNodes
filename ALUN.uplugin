@@ -4,9 +4,9 @@
 	"VersionName": "1.0",
 	"FriendlyName": "Agile Lens Utility Nodes",
 	"Description": "Utility blueprint nodes provided by Agile Lens",
-	"Category": "Other",
+	"Category": "Utility",
 	"CreatedBy": "Agile Lens",
-	"CreatedByURL": "https://agilelens.com/",
+	"CreatedByURL": "https://www.agilelens.com/",
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
@@ -16,12 +16,12 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "AgileLensUtilityNodes",
+			"Name": "ALUN",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}
 	],
-		"Plugins": [
+	"Plugins": [
 		{
 			"Name": "OSC",
 			"Enabled": true

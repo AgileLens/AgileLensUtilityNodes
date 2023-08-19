@@ -11,7 +11,7 @@
  * 
  */
 UCLASS()
-class AGILELENSUTILITYNODES_API UQualitySettings : public UBlueprintFunctionLibrary
+class ALUN_API UQualitySettings : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 	

@@ -1,16 +1,16 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "AgileLensUtilityNodes.h"
+#include "ALUN.h"
 
-#define LOCTEXT_NAMESPACE "FAgileLensUtilityNodesModule"
+#define LOCTEXT_NAMESPACE "FALUNModule"
 
-void FAgileLensUtilityNodesModule::StartupModule()
+void FALUNModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 	
 }
 
-void FAgileLensUtilityNodesModule::ShutdownModule()
+void FALUNModule::ShutdownModule()
 {
 	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
 	// we call this function before unloading the module.
@@ -19,4 +19,4 @@ void FAgileLensUtilityNodesModule::ShutdownModule()
 
 #undef LOCTEXT_NAMESPACE
 	
-IMPLEMENT_MODULE(FAgileLensUtilityNodesModule, AgileLensUtilityNodes)
+IMPLEMENT_MODULE(FALUNModule, ALUN)

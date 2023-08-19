@@ -90,7 +90,7 @@ void UOSCUtilities::SendOscString(FOSCMessage& OutMessage, UOSCClient* PinOscCli
 		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, TEXT("Is not valid"));
 		//UE_LOG(LogTemp, Warning, TEXT("Is not valid"));
 		if (ShouldDestroy)
-			OSCClient->MarkPendingKill();
+			OSCClient->MarkAsGarbage();
 	}
 	else
 	{
@@ -102,11 +102,11 @@ void UOSCUtilities::SendOscString(FOSCMessage& OutMessage, UOSCClient* PinOscCli
 
 		OSCClient->SendOSCMessage(OutMessage);
 		UOSCManager::ClearMessage(OutMessage);
-		OSCClient->MarkPendingKill();
+		OSCClient->MarkAsGarbage();
 		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, TEXT("Is valid"));
 		//UE_LOG(LogTemp, Warning, TEXT("Is valid"));
 		if (ShouldDestroy)
-			OSCClient->MarkPendingKill();
+			OSCClient->MarkAsGarbage();
 	}
 }
 
@@ -132,7 +132,7 @@ void UOSCUtilities::SendOscStruct(FOSCMessage& OutMessage, UOSCClient* PinOscCli
 		UOSCManager::ClearMessage(OutMessage);
 
 		if (ShouldDestroy)
-			OSCClient->MarkPendingKill();
+			OSCClient->MarkAsGarbage();
 	}
 	else
 	{
@@ -145,7 +145,7 @@ void UOSCUtilities::SendOscStruct(FOSCMessage& OutMessage, UOSCClient* PinOscCli
 		UOSCManager::ClearMessage(OutMessage);
 
 		if (ShouldDestroy)
-			OSCClient->MarkPendingKill();
+			OSCClient->MarkAsGarbage();
 	}
 }
 
@@ -168,7 +168,7 @@ void UOSCUtilities::SendOscTransform(FOSCMessage& OutMessage, UOSCClient* PinOsc
 		UOSCManager::ClearMessage(OutMessage);
 
 		if (ShouldDestroy)
-			OSCClient->MarkPendingKill();
+			OSCClient->MarkAsGarbage();
 	}
 	else
 	{
@@ -181,7 +181,7 @@ void UOSCUtilities::SendOscTransform(FOSCMessage& OutMessage, UOSCClient* PinOsc
 		UOSCManager::ClearMessage(OutMessage);
 
 		if (ShouldDestroy)
-			OSCClient->MarkPendingKill();
+			OSCClient->MarkAsGarbage();
 	}
 }
 

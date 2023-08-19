@@ -4,7 +4,7 @@
 
 #include "Modules/ModuleManager.h"
 
-class FAgileLensUtilityNodesModule : public IModuleInterface
+class FALUNModule : public IModuleInterface
 {
 public:
 

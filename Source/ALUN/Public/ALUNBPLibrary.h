@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "AgileLensUtilityNodesBPLibrary.generated.h"
+#include "ALUNBPLibrary.generated.h"
 
 /* 
 *	Function library class.
@@ -23,10 +23,10 @@
 *	https://wiki.unrealengine.com/Custom_Blueprint_Node_Creation
 */
 UCLASS()
-class UAgileLensUtilityNodesBPLibrary : public UBlueprintFunctionLibrary
+class UALUNBPLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 
-	//UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "AgileLensUtilityNodes sample test testing"), Category = "AgileLensUtilityNodesTesting")
-	//static float AgileLensUtilityNodesSampleFunction(float Param);
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "ALUN sample test testing"), Category = "ALUNTesting")
+	static float ALUNSampleFunction(float Param);
 };
