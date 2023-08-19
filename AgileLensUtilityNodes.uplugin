@@ -18,7 +18,13 @@
 		{
 			"Name": "AgileLensUtilityNodes",
 			"Type": "Runtime",
-			"LoadingPhase": "PreLoadingScreen"
+			"LoadingPhase": "Default"
+		}
+	],
+		"Plugins": [
+		{
+			"Name": "OSC",
+			"Enabled": true
 		}
 	]
 }

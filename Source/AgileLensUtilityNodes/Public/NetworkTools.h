@@ -16,6 +16,6 @@ class AGILELENSUTILITYNODES_API UNetworkTools : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
-	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens"))
+	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens|Networking"))
 	static FString GetLocalIP(bool ReturnPort);
 };

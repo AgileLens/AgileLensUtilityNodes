@@ -14,7 +14,7 @@ class AGILELENSUTILITYNODES_API UAsyncLerpTransform : public UBlueprintAsyncActi
 
 public:
 
-	UFUNCTION(BlueprintCallable, Category = "Async", meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category = "Agile Lens|Async", meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
 	static UAsyncLerpTransform* LerpTransform(UObject* WorldContextObject, FTransform StartValue, FTransform EndValue, float Duration, FTransform& CurrentTransform);
 
 	UPROPERTY(BlueprintAssignable)
