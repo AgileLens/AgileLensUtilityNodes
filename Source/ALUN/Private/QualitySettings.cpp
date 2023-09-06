@@ -30,3 +30,13 @@ void UQualitySettings::SetQualitySettings(APlayerController* PC, int f1, int f2,
 	PC->ConsoleCommand(f10s);
 	PC->ConsoleCommand(f11s);
 }
+
+FString GetActiveXRRuntime()
+{
+	if (IXRTrackingSystem* XRSystem = GEngine->XRSystem.Get())
+	{
+		return XRSystem->GetSystemName().ToString();
+	}
+
+	return "None";
+}

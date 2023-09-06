@@ -19,7 +19,7 @@
 			"Name": "ALUN",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
-		,
+		},
         {
             "Name": YourModuleName,
             "Type": "Runtime",

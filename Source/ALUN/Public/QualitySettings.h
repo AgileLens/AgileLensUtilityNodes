@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameFramework/PlayerController.h"
+#include "XRPlatform.h"
 #include "QualitySettings.generated.h"
 
 /**
@@ -46,5 +47,7 @@ class ALUN_API UQualitySettings : public UBlueprintFunctionLibrary
 		UPARAM(DisplayName = "Pixel Density %") int f10 = 100,
 		UPARAM(DisplayName = "Screen Percentage") int f11 = 100
 		);
-	
+
+	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens|Settings"))
+	FString GetActiveXRRuntime();
 };
