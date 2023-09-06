@@ -5,7 +5,8 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameFramework/PlayerController.h"
-#include "XRPlatform.h"
+#include "HAL/IConsoleManager.h"
+#include "IXRTrackingSystem.h"
 #include "QualitySettings.generated.h"
 
 /**
@@ -20,14 +21,14 @@ class ALUN_API UQualitySettings : public UBlueprintFunctionLibrary
 	
 	/** 
 	* Agile Lens visual quality setting node. Runs the console commands below. Hover over input pin for value ranges.
-	* @param	f1	Value range: 0 - 3
-	* @param	f2	Value range: 0 - 3
-	* @param	f3	Value range: 0 - 3
-	* @param	f4	Value range: 0 - 3
-	* @param	f5	Value range: 0 - 3
-	* @param	f6	Value range: 0 - 3
-	* @param	f7	Value range: 0 - 3
-	* @param	f8	Value range: 0 - 3
+	* @param	f1	Value range: 0 - 4
+	* @param	f2	Value range: 0 - 4
+	* @param	f3	Value range: 0 - 4
+	* @param	f4	Value range: 0 - 4
+	* @param	f5	Value range: 0 - 4
+	* @param	f6	Value range: 0 - 4
+	* @param	f7	Value range: 0 - 4
+	* @param	f8	Value range: 0 - 4
 	* @param	f9	Value range: 0 - 3
 	* @param	f10	Value range: 10 - 200 (Value divided by 100 for a float range of 0.1 - 2.0)
 	* @param	f11	Value range: 10 - 200
@@ -49,5 +50,20 @@ class ALUN_API UQualitySettings : public UBlueprintFunctionLibrary
 		);
 
 	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens|Settings"))
-	FString GetActiveXRRuntime();
+	static void GetQualitySettings(
+		UPARAM(DisplayName = "Anti Aliasing Quality") int& f1,
+		UPARAM(DisplayName = "Effects Quality") int& f2,
+		UPARAM(DisplayName = "Post Process Quality") int& f3,
+		UPARAM(DisplayName = "Shadow Quality") int& f4,
+		UPARAM(DisplayName = "Texture Quality") int& f5,
+		UPARAM(DisplayName = "Reflection Quality") int& f6,
+		UPARAM(DisplayName = "Global Illumination Quality") int& f7,
+		UPARAM(DisplayName = "View Distance Quality") int& f8,
+		UPARAM(DisplayName = "Material Quality Level") int& f9,
+		UPARAM(DisplayName = "Pixel Density %") int& f10,
+		UPARAM(DisplayName = "Screen Percentage") int& f11
+	);
+
+	UFUNCTION(BlueprintCallable, meta = (Category = "Agile Lens|Settings"))
+	static FString GetActiveXRRuntime();
 };
